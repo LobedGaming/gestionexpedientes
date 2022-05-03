@@ -1,0 +1,154 @@
+
+    <div class="tab-pane fade" id="colaborador" role="tabpanel" aria-labelledby="colaborador-tab">
+      <table class="table col-12">
+        <thead>
+          <tr>
+              <th>Id</th>
+              <th >Nombre</th>
+              <th>Apellido</th>
+          </tr>
+      </thead>
+      <tbody> 
+    <?php
+    $casos=DB::table('casos')
+    ->select('casos.*')
+    ->where('idexp',$details->idExpediente)
+    ->get();
+    ?>
+    @foreach($casos as $iddetails)
+    <?php
+    $users=DB::table('users')
+    ->select('users.*')
+    ->where('id',$iddetails->idUser)
+    ->get();
+    ?>
+    @foreach ($users as $user)   
+    <tr>
+      @if ($user->role=='Colaborador')
+         <td>{{$user->id}}</td>
+         <td>{{$user->name}}</td>
+         <td>{{$user->apellido}}</td> 
+         @endif
+        </tr> 
+    @endforeach
+    @endforeach
+  </tbody>
+</table>
+    </div>
+    <div class="tab-pane fade" id="juez" role="tabpanel" aria-labelledby="juez-tab">
+      <table class="table col-12">
+        <thead>
+          <tr>
+              <th>Id</th>
+              <th >Nombre</th>
+              <th>Apellido</th>
+          </tr>
+      </thead>
+      <tbody> 
+    <?php
+    $casos=DB::table('casos')
+    ->select('casos.*')
+    ->where('idexp',$details->idExpediente)
+    ->get();
+    ?>
+    @foreach($casos as $iddetails)
+    <?php
+    $users=DB::table('users')
+    ->select('users.*')
+    ->where('id',$iddetails->idUser)
+    ->get();
+    ?>
+    @foreach ($users as $user)   
+    <tr>
+      @if ($user->role=='Juez')
+         <td>{{$user->id}}</td>
+         <td>{{$user->name}}</td>
+         <td>{{$user->apellido}}</td> 
+         @endif
+        </tr> 
+    @endforeach
+    @endforeach
+  </tbody>
+</table>
+    </div>
+
+
+
+
+
+
+
+
+     @foreach ($documentos as $details)
+    <?php
+    $casos=DB::table('casos')
+    ->select('casos.*')
+    ->where('idexp',$details->idExpediente)
+    ->get();
+    ?>
+    @foreach($casos as $iddetails)
+    <?php
+    $users=DB::table('users')
+    ->select('users.*')
+    ->where('id',$iddetails->idUser)
+    ->get();
+    ?>
+
+    <div class="tab-pane fade" id="abogado" role="tabpanel" aria-labelledby="abogado-tab">
+      <table class="table col-12">
+        <thead>
+          <tr>
+              <th>Id</th>
+              <th >Nombre</th>
+              <th>Apellido</th>
+          </tr>
+      </thead>
+      <tbody> 
+    @foreach ($users as $user)   
+      @if ($user->role=='Abogado')
+      <tr>
+         <td>{{$user->id}}</td>
+         <td>{{$user->name}}</td>
+         <td>{{$user->apellido}}</td> 
+      </tr> 
+      @endif
+    @endforeach
+  </tbody>
+</table>
+
+</div>
+@endforeach
+ 
+
+    <div class="tab-pane fade" id="documento" role="tabpanel" aria-labelledby="documento-tab">
+        <table class="table col-12">
+            <thead>
+                <tr>
+                    <th >Numero Nurej </th>
+                    <th>Id creador</th>
+                    <th>Fecha creada</th>
+                    <th>Documento </th>
+                    <th>Descripcion</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($documentos as $details)
+                <tr>
+                <td>{{$details->idExpediente}}</td>
+                <td>{{$details->idUser}}</td>
+                <td>{{$details->fcreado}}</td>
+                <td>{{$details->file}}</td>
+                <td>{{$details->descripcion}}</td>
+                <td>
+                  <form action="{{route('expedientes.ver')}} " method="POST" class="d-inline">
+                    @csrf
+                    <input type="hidden" name="file" value="{{$details->file}}">
+                    <button class="btn btn-success" type="submit">Ver</button>
+                  </form> 
+                </td>
+              </tr>
+              @endforeach  
+            </tbody>
+        </table>
+    </div>

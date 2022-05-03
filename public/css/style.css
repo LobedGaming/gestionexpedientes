@@ -1,0 +1,141 @@
+/*HTML*/
+.body-pdf
+{
+    border-style: solid;
+    
+}
+
+/*app base*/
+.nav-grid
+{
+    
+    padding-top: 2rem;
+    padding-left: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: lightslategrey;
+    color: aliceblue;
+    
+}
+.as-caso
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.titulo-head a
+{
+
+    font-weight: bold;  
+   color: aliceblue; 
+   font-size: 2rem;
+   text-decoration: none;
+    
+}
+.bt-free:hover
+{
+ color: white;
+}
+.ref-h
+{
+    text-align:right;
+    margin-right: 3rem;
+}
+.card-1
+{
+    margin-left: 6rem;
+}
+.hide-l-i-d
+{
+    color:white;
+}
+.card-2
+{
+    margin-left: 6rem;
+}
+.texto-doc
+{
+    font-size: 1.3rem;
+    inline-size: auto;
+}
+.texto-doc-p
+{
+font-size: 1.5rem;
+font-weight: bold;
+}
+.card-3
+{
+    margin-left:6rem;
+}
+.ref-h a
+{
+    color: aliceblue;
+}
+.notif
+{
+     border-style: solid;
+     text-align: center;
+     width: 2.4rem;
+     height: 2.5rem;
+     border-radius: 3rem;
+     background-color:darkslategrey;
+}
+.nombre-h
+{
+    font-weight: bold;
+    font-size: larger;
+}
+.link-med
+{
+    margin-left: 2rem;
+}
+/*HOME*/
+.h1-home
+{
+   font-size: 1.5rem;    
+}
+/*LOGIN*/
+.form-log
+{
+
+    text-align: center;
+}
+/*.Register*/
+/*Index admin*/
+
+.content-principal
+{
+    display: grid;
+    grid-template-columns: 20% 60% 10%;
+}
+.content-principal-reg
+{
+    display: grid;
+    grid-template-columns: 30% 50% 30%;
+}
+.index-adm
+{
+    width: 45rem;
+    text-align: center;
+}
+
+.bt-pri
+{
+    margin-left: 3rem;
+}
+.index-doc a
+{
+    height: 7rem;
+}
+/************************************************/
+.texto-pdf
+{
+    width: 71.2rem;
+    height: 50rem;
+}
+.boton-pdf
+{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 20rem;
+    margin-left: 23rem;
+}
